@@ -1,6 +1,6 @@
 assets/*
 !assets/.gitignore
-runtime/*
+runtime/
 runtime/.gitignore
 vendor/
 web/assets/
