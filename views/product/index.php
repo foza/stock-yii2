@@ -24,6 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <?= Html::a(Yii::t('app', 'Create Product'), ['create'], ['class' => 'btn btn-success']) ?>
                         </div>
                     </div>
+                    <!-- $this->render('_search', ['model' => $searchModel]); -->
                 </div><!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                     <div class="box-body">
@@ -41,12 +42,14 @@ $this->params['breadcrumbs'][] = $this->title;
                     return Html::img('../' . $data->category->img,
                         ['width' => '60px']);
                 },
-                'filter' => ArrayHelper::map(app\models\Category::find()->all(),'id','img')
+                //'filter' => ArrayHelper::map(app\models\Category::find()->all(),'id','img')
             ],
 
             [
-                'attribute' => 'category_id',
+                'attribute' => 'category',
+                'label'=>'ИМЯ/КОД',
                 'value' => 'category.title',
+                'format'=>'text',
             ],
 
             [
