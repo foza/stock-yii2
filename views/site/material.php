@@ -48,7 +48,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 <!-- /.box-body -->
                 <?php ActiveForm::end() ?>
                 <div class="box-footer text-center">
-                    <button class="btn btn-info " id="btn"><?= Yii::t('app', 'Check') ?></button>
+                    <button class="btn btn-info " id="btn"><?= Yii::t('app', 'Сформировать') ?></button>
                 </div>
                 <!-- /.box-footer -->
             </div>
@@ -62,13 +62,16 @@ $js = <<<JS
     $('#btn').on('click',function(){
         $.ajax({
             url:'/site/test?select=1',
-            data:{date1:$('#profit-date1').val(),date2:$('#profit-date2').val()},
+            data:{
+                date1:$('#profit-date1').val(),
+                date2:$('#profit-date2').val()},
             type:'POST',
             success:function(res){
                 $('#check-status').html(res);
             },
             error:function(res){
                 console.log(res);
+
             }
         });
     });

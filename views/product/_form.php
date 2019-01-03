@@ -22,14 +22,14 @@ use kartik\date\DatePicker;
     <?=  $form->field($model, 'category_id')->widget(Select2::classname(), [
         'data' => ArrayHelper::map(\app\models\Category::find()->all(), 'id', 'title'),
         'language' => 'ru',
-        'options' => ['placeholder' => 'Подошва'],
+        'options' => ['placeholder' => ' '],
         'pluginOptions' => [
             'allowClear' => true
         ],
     ]);?>
 
 
-
+    <?= $form->field($model, 'artikul')->textInput() ?>
     <?= $form->field($model, 'count')->textInput() ?>
 
     <?= $form->field($model, 'price_come')->textInput(['maxlength' => true]) ?>
@@ -39,13 +39,13 @@ use kartik\date\DatePicker;
 
     <?= $form->field($model, 'gender_id')->dropDownList(
         ArrayHelper::map(\app\models\Gender::find()->asArray()->all(), 'id', 'title')
-        , ['prompt'=>'--Пол--']
+        , ['prompt'=>'----']
     ); ?>
 
     <?=  $form->field($model, 'material_id')->widget(Select2::classname(), [
         'data' => ArrayHelper::map(\app\models\Material::find()->all(), 'id', 'title'),
         'language' => 'ru',
-        'options' => ['placeholder' => 'Материал'],
+        'options' => ['placeholder' => ' '],
         'pluginOptions' => [
             'allowClear' => true
         ],
@@ -61,7 +61,7 @@ use kartik\date\DatePicker;
     ]); ?>
 
     <div class="form-group">
-        <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton(Yii::t('app', 'Qo\'shish'), ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

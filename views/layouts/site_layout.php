@@ -45,25 +45,19 @@ AppAssetSite::register($this);
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="/">O'zbekiston yoshlar ittifoqi</a>
+                
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="top-navbar-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <!--span class="li-text">
-                            Telegram 
-                        </span> 
-                        <a href="#"><strong>@YoshlarIttifoqiBot</strong></a> 
+                       
                         <span class="li-text">
-                            orqali a'zo bo'ling  
-                        </span-->
-                        <span class="li-text">
-                            <strong>Biz bilan bog'laning!</strong>
+                            <strong>Не туда попал</strong>
                         </span> 
                         <span class="li-social">
                             <!--a href="https://m.me/yi.uz"><i class="fa fa-send"></i></a-->  
-                            <a href="mailto:info@yi.uz"><i class="fa fa-envelope"></i></a>
+                            <a href="#"><i class="fa fa-envelope"></i></a>
                         </span>
                     </li>
                 </ul>

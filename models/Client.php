@@ -44,8 +44,8 @@ class Client extends \yii\db\ActiveRecord
             'id' => Yii::t('app', 'ID'),
             'title' => Yii::t('app', 'СTitle'),
             'phone' => Yii::t('app', 'СPhone'),
-            'email' => Yii::t('app', 'Email'),
-            'comment' => Yii::t('app', 'СComment'),
+            'email' => Yii::t('app', 'Долг'),
+            'comment' => Yii::t('app', 'Долг'),
         ];
     }
 

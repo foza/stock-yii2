@@ -2,8 +2,8 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=sklad_magazin',
-    'username' => 'root',
-    'password' => '',
+    'dsn' => 'mysql:host=localhost;dbname=admin_perfect',
+    'username' => 'admin_pefect',
+    'password' => 'adminperfect',
     'charset' => 'utf8',
 ];

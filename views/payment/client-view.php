@@ -1,5 +1,5 @@
 <?php
-$this->title = Yii::t('app', 'view');
+$this->title = Yii::t('app', 'Платежи клиента');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Cilent'), 'url' => ['client']];
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'client-list'), 'url' => ['client-list','id'=>$client_id]];
 $this->params['breadcrumbs'][] = $this->title;
@@ -9,7 +9,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
-                        <h3 class="box-title"><?=$client?></h3>
+                        <h3 class="box-title">Платежи клиента : <b> <?=$client?> </b> </h3>
                     </div>
                     <!-- /.box-header -->
                     <div class="box-body">
@@ -29,8 +29,8 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <td><?= $one->date ?></td>
                                     <td><?= $one->payed_sum ?></td>
                                     <td align="center">
-                                        <button onclick="window.location.href='<?= Yii::$app->urlManager->createUrl(['payment-client/client-update', 'id' => $one->id]) ?>'"
-                                                type="button" class="btn btn-info"><i class="fa fa-pencil"></i></button>
+                                      <!--   <button onclick="window.location.href='<?= Yii::$app->urlManager->createUrl(['payment-client/client-update', 'id' => $one->id]) ?>'"
+                                                type="button" class="btn btn-info"><i class="fa fa-pencil"></i></button> -->
 
                                     </td>
                                 </tr>

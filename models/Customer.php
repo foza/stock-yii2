@@ -31,7 +31,7 @@ class Customer extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['product_id', 'count', 'client_id', 'price_sale', 'total_sum', 'date_sale'], 'required'],
+            [['product_id', 'count', 'client_id', 'total_sum', 'date_sale'], 'required'],
             [['product_id', 'count', 'client_id'], 'integer'],
             [['price_sale', 'total_sum'], 'number'],
             [['date_sale'], 'safe'],
@@ -49,9 +49,9 @@ class Customer extends \yii\db\ActiveRecord
             'product_id' => Yii::t('app', 'Product ID'),
             'count' => Yii::t('app', 'Count'),
             'client_id' => Yii::t('app', 'Client ID'),
-            'price_sale' => Yii::t('app', 'Price Sale'),
-            'total_sum' => Yii::t('app', 'Total Sum'),
-            'date_sale' => Yii::t('app', 'Date Sale'),
+            'price_sale' => Yii::t('app', 'Цена продукта'),
+            'total_sum' => Yii::t('app', 'Общая сумма'),
+            'date_sale' => Yii::t('app', 'Дата продажи'),
         ];
     }
 

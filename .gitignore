@@ -5,3 +5,5 @@ runtime/.gitignore
 vendor/
 web/assets/
 runtime/
+
+sftp-config.json

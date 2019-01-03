@@ -19,8 +19,8 @@ class ProductSearch extends Product
     public function rules()
     {
         return [
-            [['id', 'count', 'first_count', 'gender_id', 'material_id'], 'integer'],
-            [[ 'category','category_id','date'], 'safe'],
+            [['id', 'count', 'first_count','gender_id', 'material_id'], 'integer'],
+            [[ 'category',  'artikul', 'category_id','date'], 'safe'],
             [['price_come', 'prise_sale'], 'number'],
         ];
     }
@@ -71,6 +71,7 @@ class ProductSearch extends Product
             'id' => $this->id,
             'category_id' => $this->category_id,
             'count' => $this->count,
+            'artikul' => $this->artikul,
             'price_come' => $this->price_come,
             'prise_sale' => $this->prise_sale,
             'first_count' => $this->first_count,
@@ -78,7 +79,8 @@ class ProductSearch extends Product
             'material_id' => $this->material_id,
             'date' => $this->date,
         ])
-        ->andFilterWhere(['like', 'category.title', $this->category]);
+        ->andFilterWhere(['like', 'category.title', $this->category])
+        ->andFilterWhere(['like', 'artikul', $this->artikul]);
         return $dataProvider;
     }
 }

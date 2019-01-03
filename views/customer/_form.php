@@ -17,10 +17,19 @@ use kartik\date\DatePicker;
 
     <?php $form = ActiveForm::begin(['id' => 'dynamic-form']); ?>
 
-    <?= $form->field($first, 'client_id')->dropDownList(
-        ArrayHelper::map(\app\models\Client::find()->asArray()->all(), 'id', 'title')
-        , ['prompt'=>'--Клиент--']
-    ); ?>
+
+        <?= $form->field($first, 'client_id')->widget(Select2::classname(), [
+                                            'data' => ArrayHelper::map(\app\models\Client::find()->asArray()->all(), 'id','title'),
+                                            'language' => 'en',
+                                            'options' => ['placeholder' => 'Клиент'],
+                                            'pluginOptions' => [
+                                                'allowClear' => true
+
+                                            ],
+                                        ]) ?>
+
+
+
 
     <?php echo $form->field($first, 'date_sale')->widget(
         DatePicker::className(), [
@@ -47,15 +56,15 @@ use kartik\date\DatePicker;
             'formFields' => [
                 'product_id',
                 'count'
-            ],
+            ], 
         ]); ?>
 
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>
-                    <i class="fa fa-user"></i> Customer
+                    <i class="glyphicon glyphicon-shopping-cart"></i> Товары
                     <button type="button" class="add-item btn btn-success btn-sm pull-right"><i
-                                class="glyphicon glyphicon-plus"></i> Customer
+                                class="glyphicon glyphicon-plus"></i> Ещё товар
                     </button>
                 </h4>
             </div>
@@ -64,7 +73,7 @@ use kartik\date\DatePicker;
                     <?php foreach ($model as $i => $modelAddress): ?>
                         <div class="item panel panel-default"><!-- widgetItem -->
                             <div class="panel-heading">
-                                <h3 class="panel-title pull-left">Customer</h3>
+                                <h3 class="panel-title pull-left">Товар</h3>
                                 <div class="pull-right">
                                     <button type="button" class="remove-item btn btn-danger btn-xs"><i
                                                 class="glyphicon glyphicon-minus"></i></button>
@@ -88,6 +97,9 @@ use kartik\date\DatePicker;
 
                                     <div class="col-sm-4">
                                         <?= $form->field($modelAddress, "[{$i}]count")->textInput(['maxlength' => true]) ?>
+                                    </div>
+                                     <div class="col-sm-4">
+                                        <?= $form->field($modelAddress, "[{$i}]price_sale")->textInput(['maxlength' => true]) ?>
                                     </div>
                                 </div><!-- .row -->
 

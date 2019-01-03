@@ -35,7 +35,7 @@ class Product extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['category_id', 'count', 'price_come', 'prise_sale', 'first_count', 'gender_id', 'material_id', 'date'], 'required'],
+            [['category_id', 'artikul','count', 'price_come', 'prise_sale', 'first_count', 'gender_id', 'material_id', 'date'], 'required'],
             [['category_id', 'count', 'first_count', 'gender_id', 'material_id'], 'integer'],
             [['price_come', 'prise_sale'], 'number'],
             [['date'], 'safe'],
@@ -49,15 +49,16 @@ class Product extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('app', 'ID'),
-            'category_id' => Yii::t('app', 'Category ID'),
+            'category_id' => Yii::t('app', 'Maxsulot nomi'),
+            'artikul' => Yii::t('app', 'Maxsulot kodi'),
 
-            'count' => Yii::t('app', 'Count'),
-            'price_come' => Yii::t('app', 'Price Come'),
-            'prise_sale' => Yii::t('app', 'Prise Sale'),
+            'count' => Yii::t('app', 'Soni (dona)'),
+            'price_come' => Yii::t('app', 'Tan narxi'),
+            'prise_sale' => Yii::t('app', 'Sotish narxi'),
             'first_count' => Yii::t('app', 'First Count'),
-            'gender_id' => Yii::t('app', 'Gender ID'),
-            'material_id' => Yii::t('app', 'Material ID'),
-            'date' => Yii::t('app', 'Date'),
+            'gender_id' => Yii::t('app', 'Erkak/Ayol'),
+            'material_id' => Yii::t('app', 'Material'),
+            'date' => Yii::t('app', 'Sana'),
         ];
     }
 

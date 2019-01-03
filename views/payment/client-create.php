@@ -18,14 +18,14 @@ $this->params['breadcrumbs'][] = $this->title;
             <?php $form = ActiveForm::begin() ?>
             <?= $form->field($model, 'date')->widget(DatePicker::classname(), [
                 'type' => DatePicker::TYPE_COMPONENT_APPEND,
-                'options' => ['placeholder' => Yii::t('app', 'Enter birth date ...')],
+                'options' => ['placeholder' => Yii::t('app', 'Введите дату ...')],
                 'pluginOptions' => [
                     'autoclose' => true,
                     'format' => 'yyyy-mm-dd'
                 ]
             ]); ?>
 
-            <?= $form->field($model, 'payed_sum')->textInput() ?>
+            <?= $form->field($model, 'payed_sum')->textInput()->label(false) ?>
 
 
             <?/*= $form->field($model, 'type_of_payment_id')->widget(Select2::classname(), [

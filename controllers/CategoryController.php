@@ -80,6 +80,9 @@ class CategoryController extends Controller
                 if ($model->upload->saveAs($filePath)) {
                     $model->img = $filePath;
                 }
+            }elseif(empty($model->upload)){
+                $filePath = 'uploads/default.png';
+                $model->img = $filePath;
             }
 
             if ($model->save(false)) {

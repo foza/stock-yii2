@@ -73,11 +73,23 @@ class CustomerController extends Controller
         if ($first->load(Yii::$app->request->post())) {
             $model = Model::createMultiple(Customer::classname());
             Model::loadMultiple($model, Yii::$app->request->post());
-
+            
+            
+            
             foreach ($model as $t) {
                 $t->client_id = $first->client_id;
                 $t->date_sale = $first->date_sale;
-                $t->price_sale = \app\models\Product::find()->where(['category_id'=>$t->product_id])->where([">","count",0])->max('prise_sale');
+                if (empty($t->price_sale)){
+
+                    $t->price_sale = \app\models\Product::find()->where(['category_id'=>$t->product_id])->where([">","count",0])->max('prise_sale');
+                }else{
+
+           
+                $t->price_sale;
+
+                }
+                // exit;
+                // $t->price_sale = \app\models\Product::find()->where(['category_id'=>$t->product_id])->where([">","count",0])->max('prise_sale');
                 $t->total_sum = $t->price_sale * $t->count;
                 $t->save();
             }

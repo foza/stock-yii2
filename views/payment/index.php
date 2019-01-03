@@ -31,6 +31,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
 
                         <? foreach ($model as $one) {
+
+                            $clientDebit = $one->comment;
+
+                            $debitClient = preg_replace('/\s+/', '', $clientDebit);
+
                             $debt = \app\models\Customer::find()->where(['client_id'=>$one->id])->all();
                             $sum=0;
                             foreach($debt as $d){
@@ -50,7 +55,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             ?>
                             <tr>
                                 <td><?= $one->title ?></td>
-                                <td><?= $sum?> UZS</td>
+                                <td><?= $sum + $debitClient?> UZS </td>
                                 <td align="center">
                                     <button onclick="window.location.href='<?= Yii::$app->urlManager->createUrl(['payment/view', 'id' => $one->id]) ?>'"
                                             type="button" class="btn btn-info"><i class="fa fa-plus"></i></button>

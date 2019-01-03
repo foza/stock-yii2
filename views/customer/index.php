@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\helpers\ArrayHelper;
 use kartik\select2\Select2;
+use kartik\date\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $searchModel app\models\CustomertSearch */
@@ -33,6 +34,20 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\SerialColumn'],
 
             [
+                'attribute' => 'client_id',
+                'value' => 'client.title',
+                'filter' => Select2::widget([
+                    'model' => $searchModel,
+                    'attribute' => 'client_id',
+                    'data' => ArrayHelper::map(\app\models\Client::find()->where(['status' => 1])->all(), 'id', 'title'),
+                    //'theme' => Select2::THEME_BOOTSTRAP,
+                    //'hideSearch' => true,
+                    'options' => [
+                        'placeholder' => Yii::t('app', 'Select'),
+                    ]
+                ]),
+            ],
+            [
                 'attribute' => 'product_id',
                 'value' => 'category.title',
                 'filter' => Select2::widget([
@@ -50,27 +65,26 @@ $this->params['breadcrumbs'][] = $this->title;
                 ]),
             ],
 
-            [
-                'attribute' => 'client_id',
-                'value' => 'client.title',
-                'filter' => Select2::widget([
-                    'model' => $searchModel,
-                    'attribute' => 'client_id',
-                    'data' => ArrayHelper::map(\app\models\Client::find()->where(['status' => 1])->all(), 'id', 'title'),
-                    //'theme' => Select2::THEME_BOOTSTRAP,
-                    //'hideSearch' => true,
-                    'options' => [
-                        'placeholder' => Yii::t('app', 'Select'),
-                    ]
-                ]),
-            ],
 
             'count',
 
            // 'client_id',
             'price_sale',
             'total_sum',
-            'date_sale',
+                    [
+                        'attribute' => 'date_sale',
+                        'filter' => DatePicker::widget([
+                            'options' => ['width' => '100px'],
+                            'model'=>$searchModel,
+                            'attribute' => 'date_sale',
+                            'type' => DatePicker::TYPE_COMPONENT_APPEND,
+                            'pluginOptions' => [
+                                'format' => 'yyyy-mm-dd',
+                                'autoclose' => true,
+                                'todayHighlight' => true,
+                            ]
+                        ]),
+                    ],
 
 
             ['class' => 'yii\grid\ActionColumn'],

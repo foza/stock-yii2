@@ -22,7 +22,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                 <th><?= Yii::t('app', 'Count') ?></th>
                                 <th><?= Yii::t('app', 'Price Sale') ?></th>
                                 <th><?= Yii::t('app', 'Общая сумма') ?></th>
-                                <th><?= Yii::t('app', 'Qarz') ?></th>
+                                <th><?= Yii::t('app', 'Долг') ?></th>
                                 <th><?= Yii::t('app', '') ?></th>
                                 <th></th>
                             </tr>
@@ -31,6 +31,7 @@ $this->params['breadcrumbs'][] = $this->title;
                             <? foreach ($model as $one) {
                                 $payment = \app\models\Payment::find()->where(['client_id' => $one->client_id,'cutomer_id'=>$one->id])->all();
                                 $sum2 = 0;
+                                $sum = 0;
                                 foreach ($payment as $p) {
 
                                     $sum2 += $p->payed_sum;
@@ -45,7 +46,15 @@ $this->params['breadcrumbs'][] = $this->title;
                                     <td><?= $one->count ?></td>
                                     <td><?= $one->price_sale ?></td>
                                     <td><?= $one->total_sum ?></td>
-                                    <td><?= $sum ?> so'm</td>
+                                    <td><?php 
+
+                                    if($sum == '0'){
+                                        echo $sum = $one->total_sum;
+                                    }else{
+                                        echo $sum;
+                                    }
+
+                                     ?> so'm</td>
                                     <td align="center">
                                         <button onclick="window.location.href='<?= Yii::$app->urlManager->createUrl(['payment/client-view', 'client_id' => $one->client_id,'cutomer_id'=>$one->id]) ?>'"
                                                 type="button" class="btn btn-info"><i class="fa fa-eye"></i></button>

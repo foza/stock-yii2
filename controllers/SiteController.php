@@ -73,7 +73,7 @@ class SiteController extends Controller
             $data = Yii::$app->request->post();
             $model->date1 = $data['date1'];
             $model->date2 = $data['date2'];
-            $model->select = $data['select'];
+            $model->select = 1;
             $model->form($select);
         }
     }

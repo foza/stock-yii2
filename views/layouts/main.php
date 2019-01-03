@@ -108,27 +108,24 @@ AppAsset::register($this);
           </div>
           <ul class="sidebar-menu tree" data-widget="tree">
             <li class="header"><?=Yii::t('app',"menu");?></li>
-            <li>
-              <?=Html::a('<i class="fa  fa-shopping-cart"></i> <span> '.Yii::t('app',"Категории подошв").'</span>',['/category/index']);?>
-            </li>
               <li>
-                  <?=Html::a('<i class="fa  fa-shopping-cart"></i> <span> '.Yii::t('app',"Склад").'</span>',['/product/index']);?>
+                  <?=Html::a('<i class="fa  fa-shopping-cart"></i> <span> '.Yii::t('app',"Sklad").'</span>',['/product/index']);?>
               </li>
               <li>
-                  <?=Html::a('<i class="fa fa-truck"></i> <span> '.Yii::t('app',"Продажа товара").'</span>',['/customer/']);?>
+                  <?=Html::a('<i class="fa fa-truck"></i> <span> '.Yii::t('app',"Sotuv").'</span>',['/customer/']);?>
               </li>
               <li>
-                  <?=Html::a('<i class="fa  fa-group "></i>'.Yii::t('app',"Clients").'</span>',['/client/index']);?>
+                  <?=Html::a('<i class="fa  fa-group "></i>'.Yii::t('app',"Xaridorlar").'</span>',['/client/index']);?>
               </li>
 
               <li>
-                  <?=Html::a('<i class="fa fa-truck"></i> <span> '.Yii::t('app',"Прочие расходы").'</span>',['/expense/']);?>
+                  <?=Html::a('<i class="fa fa-truck"></i> <span> '.Yii::t('app',"Xarajatlar").'</span>',['/expense/']);?>
               </li>
               <li>
-                  <?=Html::a('<i class="fa  fa-credit-card"></i>'.Yii::t('app',"Долги клиентов").'</span>',['/payment/index']);?>
+                  <?=Html::a('<i class="fa  fa-credit-card"></i>'.Yii::t('app',"Qarzdorlar").'</span>',['/payment/index']);?>
               </li>
               <li>
-                  <?=Html::a('<i class="fa fa-bar-chart"></i> <span> '.Yii::t('app',"Отчёт").'</span>',['/site/form']);?>
+                  <?=Html::a('<i class="fa fa-bar-chart"></i> <span> '.Yii::t('app',"Xisobot").'</span>',['/site/form']);?>
               </li>
               <li class="treeview">
                   <a href="#">
@@ -138,11 +135,14 @@ AppAsset::register($this);
                       </span>
                   </a>
                   <ul class="treeview-menu" style="display: none;">
-                      <li class="active">
-                          <?=Html::a('<i class="fa fa-flask"></i> <span> '.Yii::t('app',"Categories").'</span>',['/material/index']);?>
+                    <li>
+                    <?=Html::a('<i class="fa  fa-shopping-cart"></i> <span> '.Yii::t('app',"Maxsulotlar").'</span>',['/category/index']);?>
+                     </li>
+                       <li>
+                          <?=Html::a('<i class="fa fa-flask"></i> <span> '.Yii::t('app',"Material").'</span>',['/material/index']);?>
                       </li>
-                      <li class="active">
-                          <?=Html::a('<i class="fa fa-venus-mars"></i> <span> '.Yii::t('app',"Genders").'</span>',['/gender/index']);?>
+                      <li>
+                          <?=Html::a('<i class="fa fa-venus-mars"></i> <span> '.Yii::t('app',"Jinsi").'</span>',['/gender/index']);?>
                       </li>
 
                   </ul>
@@ -180,7 +180,7 @@ AppAsset::register($this);
         <div class="pull-right hidden-xs">
           <b>Version</b> 1.0.0
         </div>
-        <strong><a href="http://enzo.uz"><?=Yii::t('app',"Enzo");?></a> &copy; </strong> <?=Yii::t('app',"All rights reserved");?>.
+        <strong><a href="http://enzo.uz"><?=Yii::t('app',"Panda");?></a> &copy; </strong> <?=Yii::t('app',"All rights reserved");?>.
       </footer>
       <!-- Add the sidebar's background. This div must be placed
            immediately after the control sidebar -->

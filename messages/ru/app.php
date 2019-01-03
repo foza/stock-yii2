@@ -3,7 +3,7 @@ return array(
 
 
     'title' => 'Наиминование',
-    'Categories' => 'Материалы',
+    'Categories' => 'Maxsulotlar',
     'Products' => 'Продукты',
     'Product' => 'Продукт',
     'Date' => 'Дата',
