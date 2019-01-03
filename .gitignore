@@ -3,6 +3,7 @@ assets/*
 runtime/
 runtime/.gitignore
 vendor/
+config/
 web/assets/
 runtime/
 .idea/
